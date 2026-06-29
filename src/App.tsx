@@ -22,13 +22,13 @@ export default function App() {
   // Load from localStorage on mount
   useEffect(() => {
     try {
-      const storedWater = localStorage.getItem('mcp_water');
+      const storedWater = localStorage.getItem('complete_coach_client_water');
       if (storedWater) setWaterIntake(parseFloat(storedWater));
 
-      const storedWeight = localStorage.getItem('mcp_weight');
+      const storedWeight = localStorage.getItem('complete_coach_client_weight');
       if (storedWeight) setRecordedWeight(parseFloat(storedWeight));
 
-      const storedMeals = localStorage.getItem('mcp_meals');
+      const storedMeals = localStorage.getItem('complete_coach_client_meals');
       if (storedMeals) setMeals(JSON.parse(storedMeals));
     } catch (e) {
       console.error('Error loading data from localStorage', e);
@@ -45,8 +45,8 @@ export default function App() {
   const handleAddWater = (amount: number) => {
     const updated = Math.min(waterIntake + amount, 6.0);
     setWaterIntake(updated);
-    localStorage.setItem('mcp_water', updated.toString());
-    triggerToast(`Logged +${amount * 1000}ml of water optimization.`);
+    localStorage.setItem('complete_coach_client_water', updated.toString());
+    triggerToast(`Logged +${amount * 1000}ml of water.`);
   };
 
   const handleLogMeal = (id: string) => {
@@ -63,7 +63,7 @@ export default function App() {
       return meal;
     });
     setMeals(updated);
-    localStorage.setItem('mcp_meals', JSON.stringify(updated));
+    localStorage.setItem('complete_coach_client_meals', JSON.stringify(updated));
   };
 
   const handleSwapMeal = (id: string) => {
@@ -107,7 +107,7 @@ export default function App() {
       return meal;
     });
     setMeals(updated);
-    localStorage.setItem('mcp_meals', JSON.stringify(updated));
+    localStorage.setItem('complete_coach_client_meals', JSON.stringify(updated));
   };
 
   const handleFinishWorkout = (intensity: number, notes: string) => {
@@ -118,7 +118,7 @@ export default function App() {
 
   const handleSubmitWeeklyCheckIn = (weightVal: number) => {
     setRecordedWeight(weightVal);
-    localStorage.setItem('mcp_weight', weightVal.toString());
+    localStorage.setItem('complete_coach_client_weight', weightVal.toString());
     triggerToast(`Weekly check-in submitted. Weight logged: ${weightVal}kg.`);
   };
 
@@ -139,18 +139,18 @@ export default function App() {
             onClick={() => setCurrentScreen('home')}
             className="text-xl font-black italic tracking-tighter text-zinc-900 font-headline cursor-pointer select-none"
           >
-            MCP
+            Complete Coach
           </span>
           <div className="h-4 w-px bg-zinc-200" />
           <span className="text-xs font-bold text-zinc-400 font-headline uppercase tracking-widest">
-            {currentScreen === 'home' && 'Athlete Hub'}
-            {currentScreen === 'weekly-checkin' && 'Weekly Calibration'}
+            {currentScreen === 'home' && 'Client Hub'}
+            {currentScreen === 'weekly-checkin' && 'Weekly Check-in'}
             {currentScreen === 'daily-checkin' && 'Daily Alignment'}
-            {currentScreen === 'nutrition' && 'Daily Fuel'}
-            {currentScreen === 'training' && 'Kinetic Plan'}
+            {currentScreen === 'nutrition' && 'Nutrition'}
+            {currentScreen === 'training' && 'Training'}
             {currentScreen === 'active-workout' && 'Active Session'}
-            {currentScreen === 'supplementation' && 'Stack Portal'}
-            {currentScreen === 'analytics' && 'Analytics Hub'}
+            {currentScreen === 'supplementation' && 'Supplements'}
+            {currentScreen === 'analytics' && 'Progress'}
           </span>
         </div>
         
@@ -163,7 +163,7 @@ export default function App() {
           <div className="w-8 h-8 rounded-full overflow-hidden border border-zinc-200 shadow-sm cursor-pointer" onClick={() => setCurrentScreen('analytics')}>
             <img 
               className="w-full h-full object-cover" 
-              alt="Marcus Portrait" 
+              alt="Client profile" 
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWCfdkvbvIDAwl6k-D8jGni0NI5LSSwwVv_tYtz6EAZpeliZaCTIWsCnRMdJjOveB9Ha7TH4RQIhMcSUbG3gQr4MSh1cMRzkJk2WcyKJRob0oO7iBN5C-rw6zGIxbRmcvNdVS8efvarnGZtAQhtsR2p9PFEEvarSlBPlM3oTgw4tPQL3MMaHbm8RNy8vZ3l_xKKxqvgybdgjI_B1RjgLKRpMhT6XuoNS8nKGW7LsZTTEha8Bayae_oueUCb-jhShMMvrxvaVvBAek"
               referrerPolicy="no-referrer"
             />

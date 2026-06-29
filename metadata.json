@@ -1,6 +1,6 @@
 {
-  "name": "MCP - Complete Physique",
-  "description": "An elite, highly visual fitness and check-in hub representing peak performance and athletic optimization.",
+  "name": "Complete Coach Client",
+  "description": "The client-facing Complete Coach app for check-ins, training, nutrition, supplements, and progress.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": []
 }

@@ -65,7 +65,7 @@ export default function SupplementStackView({
         </div>
       </section>
 
-      {/* Kinetic Tip Card */}
+      {/* Coach Tip Card */}
       <section>
         <div className="bg-gradient-to-br from-secondary-container to-secondary rounded-3xl p-6 shadow-xl shadow-secondary-container/20 flex gap-4 items-start border border-orange-500/10">
           <div className="bg-white/20 p-2.5 rounded-2xl backdrop-blur-md text-white flex items-center justify-center">

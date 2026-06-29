@@ -19,15 +19,15 @@ export default function HomeView({
 
   return (
     <div className="space-y-8 animate-fade-in pb-12">
-      {/* Hello Marcus Header */}
+      {/* Client greeting */}
       <section className="mb-2">
         <h1 className="text-4xl font-black tracking-tight text-zinc-900 font-headline">
-          Hello, Marcus
+          Hello, Sam
         </h1>
         <div className="flex items-center gap-2 mt-2">
           <span className="w-2.5 h-2.5 rounded-full bg-secondary-container animate-pulse" />
           <p className="text-zinc-500 font-medium text-sm">
-            Your kinetic rhythm is peaking today.
+            Your coach has your plan ready for today.
           </p>
         </div>
       </section>
@@ -39,7 +39,7 @@ export default function HomeView({
       >
         <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-3xl group-hover:bg-primary/10 transition-colors" />
         
-        {/* Kinetic lightning bolt silhouette */}
+        {/* Check-in status accent */}
         <div className="absolute top-2 right-4 text-primary/5 select-none transform group-hover:scale-105 transition-transform duration-300">
           <span className="material-symbols-outlined text-[100px]" style={{ fontVariationSettings: "'FILL' 1" }}>
             bolt
@@ -52,7 +52,7 @@ export default function HomeView({
               Daily Check-in
             </h2>
             <p className="text-zinc-500 text-sm font-medium mt-1">
-              Align your metrics for peak performance.
+              Log your metrics and keep your coach updated.
             </p>
           </div>
           
@@ -63,7 +63,7 @@ export default function HomeView({
             }}
             className="w-full sm:w-auto px-6 py-4 bg-gradient-to-r from-primary to-primary-container text-white rounded-2xl font-headline font-bold text-sm tracking-wide shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2"
           >
-            Start Ritual
+            Start Check-in
             <span className="material-symbols-outlined text-sm">arrow_forward</span>
           </button>
         </div>
@@ -85,7 +85,7 @@ export default function HomeView({
               Weekly Check-in
             </h3>
             <p className="text-zinc-500 text-xs font-medium mt-1">
-              Review your evolution
+              Review progress with your coach
             </p>
           </div>
         </div>
@@ -105,7 +105,7 @@ export default function HomeView({
               Hydration
             </h3>
             <p className="text-zinc-500 text-xs font-medium mt-0.5">
-              Cellular optimization
+              Daily intake target
             </p>
           </div>
           <div className="text-right">
@@ -163,7 +163,7 @@ export default function HomeView({
                 Nutrition Library
               </h4>
               <p className="text-zinc-400 text-[10px] font-bold uppercase tracking-wider mt-1">
-                Fuel Plan
+                Nutrition Plan
               </p>
             </div>
           </div>
@@ -183,7 +183,7 @@ export default function HomeView({
                 Training Portal
               </h4>
               <p className="text-zinc-400 text-[10px] font-bold uppercase tracking-wider mt-1">
-                Kinetic Plan
+                Training Plan
               </p>
             </div>
           </div>

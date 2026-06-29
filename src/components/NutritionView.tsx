@@ -47,10 +47,10 @@ export default function NutritionView({
       {/* Header Section */}
       <section className="mb-4">
         <p className="text-secondary font-semibold tracking-widest text-[10px] uppercase mb-1 font-headline">
-          Fueling Performance
+          Nutrition
         </p>
         <h2 className="font-headline text-4xl font-extrabold tracking-tight text-zinc-900 mb-2">
-          Daily Fuel Plan
+          Daily Nutrition Plan
         </h2>
         <div className="h-1 w-12 bg-primary rounded-full" />
       </section>
