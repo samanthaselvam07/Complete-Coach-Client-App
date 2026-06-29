@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ScreenType } from '../types';
 
 interface HomeViewProps {
@@ -16,6 +16,15 @@ export default function HomeView({
 }: HomeViewProps) {
   const waterTarget = 3.0;
   const waterPercentage = Math.min((waterIntake / waterTarget) * 100, 100);
+  const [localDateLabel, setLocalDateLabel] = useState(formatLocalDateLabel);
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setLocalDateLabel(formatLocalDateLabel());
+    }, 60_000);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
 
   return (
     <div className="space-y-8 animate-fade-in pb-12">
@@ -27,7 +36,7 @@ export default function HomeView({
         <div className="flex items-center gap-2 mt-2">
           <span className="w-2.5 h-2.5 rounded-full bg-secondary-container animate-pulse" />
           <p className="text-zinc-500 font-medium text-sm">
-            Your coach has your plan ready for today.
+            {localDateLabel}
           </p>
         </div>
       </section>
@@ -271,4 +280,15 @@ export default function HomeView({
       </section>
     </div>
   );
+}
+
+function formatLocalDateLabel() {
+  const today = new Date();
+  const weekday = new Intl.DateTimeFormat(undefined, { weekday: 'long' }).format(today);
+  const date = new Intl.DateTimeFormat(undefined, {
+    day: 'numeric',
+    month: 'long'
+  }).format(today);
+
+  return `${weekday} - ${date}`;
 }
